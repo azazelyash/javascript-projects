@@ -1,1 +1,1 @@
-# JavaScript Basic Clock
+# Basic JavaScript Projects
