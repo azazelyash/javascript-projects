@@ -59,6 +59,7 @@ body {
 
 .weather {
   color: #fff;
+  display: none;
 }
 
 .weather-icon {
@@ -100,4 +101,13 @@ body {
 .wind {
   font-size: 24px;
   margin-top: -6px;
+}
+
+.error {
+  color: white;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-top: 10px;
+  text-align: left;
+  display: none;
 }
