@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toast</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+    />
+  </head>
+  <body>
+    <div class="buttons">
+      <button onclick="showToast(success)">Success</button>
+      <button onclick="showToast(error)">Error</button>
+      <button onclick="showToast(invalid)">Invalid</button>
+    </div>
+    <div id="toastBox"></div>
+    <script>
+      let toastBox = document.getElementById("toastBox");
+      let success =
+        '<span class="material-symbols-outlined">check_circle</span>Successful, well done!';
+      let error =
+        '<span class="material-symbols-outlined">error</span>Error, try refreshing!';
+      let invalid =
+        '<span class="material-symbols-outlined">cancel</span>Invalid, try again!';
+
+      function showToast(msg) {
+        const toast = document.createElement("div");
+        toast.classList.add("toast");
+        toast.innerHTML = msg;
+        toastBox.appendChild(toast);
+
+        if (msg.includes("Error")) {
+          toast.classList.add("error");
+        }
+        if (msg.includes("Invalid")) {
+          toast.classList.add("invalid");
+        }
+
+        setTimeout(() => {
+          toast.remove();
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
